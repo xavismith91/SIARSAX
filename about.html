@@ -391,6 +391,7 @@
   
  <center><strong><h1>Ubicación</h1></strong></center>
  <br>
+ <p class="texto-justificado text-center"><strong>Jacarandas #14. Bosques del Lago, Cuautitlán Izcalli.</strong></p>
   <section class="container">
     <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.2701603120213!2d-99.24155702461164!3d19.615744534806165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21c2a0b7bcc11%3A0xca4b97c9b307ed19!2sJacarandas%2014%2C%20Bosques%20del%20Lago%2C%2054765%20Cuautitl%C3%A1n%20Izcalli%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1730329989485!5m2!1ses!2smx" width="1000" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>    
    </section>
@@ -491,6 +492,22 @@
 
   <!-- <div id="preloader"></div> -->
 
+  <script>
+    // Verificar si el usuario ya ha aceptado o denegado las cookies
+    if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'declined') {
+           document.getElementById('cookie-consent').style.display = 'none';
+       }
+
+       document.getElementById('accept-cookies').addEventListener('click', function() {
+           localStorage.setItem('cookieConsent', 'accepted');
+           document.getElementById('cookie-consent').style.display = 'none';
+       });
+
+       document.getElementById('decline-cookies').addEventListener('click', function() {
+           localStorage.setItem('cookieConsent', 'declined');
+           window.location.href = 'https://www.google.com';
+       });
+</script>
  
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
