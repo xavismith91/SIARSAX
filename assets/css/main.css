@@ -2953,6 +2953,9 @@ h1 {
   /* body.darkmode .header, */
   body.darkmode .footer,
   /* body.darkmode .navbar, */
+  body.darkmode .dropdown,
+  body.darkmode .navbar-brand,
+  body.darkmode .navbar-nav .nav-link,
   body.darkmode .our-story,
   body.darkmode .service-item,   
   body.darkmode .post-item,
@@ -3023,7 +3026,7 @@ h1 {
   body.darkmode .form-floating > input,
   body.darkmode select,
   body.darkmode .dropdown {
-    background: #23272b !important;
+    background: transparent !important;
     color: #f1f1f1 !important;
     border-color: #444 !important;
   }
