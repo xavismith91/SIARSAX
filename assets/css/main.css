@@ -2936,3 +2936,114 @@ h1 {
   }
 }
 
+
+
+/* propiedades para el modo obscuro */
+
+ :root {
+    --bg-dark: #181a1b;
+    --text-dark: #f1f1f1;
+    --header-dark: #23272b;
+    --card-dark: #23272b;
+  }
+  body.darkmode {
+    background: var(--bg-dark) !important;
+    color: var(--text-dark) !important;
+  }
+  /* body.darkmode .header, */
+  body.darkmode .footer,
+  /* body.darkmode .navbar, */
+  body.darkmode .our-story,
+  body.darkmode .service-item,   
+  body.darkmode .post-item,
+  body.darkmode .section-bg {
+    background: var(--header-dark) !important;
+    color: var(--text-dark) !important;
+  }
+  body.darkmode .post-title,
+  body.darkmode h1, 
+  body.darkmode h3, 
+  body.darkmode h4, 
+  body.darkmode h5, 
+  body.darkmode h6 {
+    color: var(--text-dark) !important;
+  }
+  .switch-darkmode {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    user-select: none;
+  }
+  .switch-darkmode input {
+    display: none;
+  }
+  .switch-darkmode .slider {
+    width: 36px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: background 0.3s;
+    margin-right: 6px;
+  }
+  .switch-darkmode .slider:before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  .switch-darkmode input:checked + .slider {
+    background: #222;
+  }
+  .switch-darkmode input:checked + .slider:before {
+    transform: translateX(16px);
+    background: #ffd700;
+  }
+  .switch-darkmode .bi-moon {
+    font-size: 1.1em;
+    color: #ffd700;
+    margin-left: 2px;
+  }
+  @media (max-width: 991px) {
+    .switch-darkmode {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+   body.darkmode .bg-light,
+  body.darkmode form,
+  body.darkmode .form-floating > .form-control,
+  body.darkmode .form-floating > textarea,
+  body.darkmode .form-floating > input,
+  body.darkmode select,
+  body.darkmode .dropdown {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+  }
+
+  body.darkmode .form-control,
+  body.darkmode textarea,
+  body.darkmode select {
+    background: transparent !important;
+   color: #f1f1f1 !important;
+  border-color: #444 !important;
+  box-shadow: none !important;
+  }
+  body.darkmode .form-floating > label {
+    color: #bbb !important;
+    background: transparent !important;
+  }
+  body.darkmode .btn-primary {
+    background: #444 !important;
+    border-color: #666 !important;
+    color: #ffd700 !important;
+  }
+
+  

@@ -57,6 +57,13 @@
           </li>
           <li><a href="politica-privacidad.html">Privacidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
+           <li>
+              <label class="switch-darkmode" title="Modo oscuro">
+                <input type="checkbox" id="darkmode-toggle">
+                <span class="slider"></span>
+                <i class="bi bi-moon"></i>
+              </label>
+          </li>
         </ul>
         </nav>
 
@@ -410,6 +417,29 @@
 
  
   <script src="assets/js/main.js"></script>
+
+  <script>
+  // Modo oscuro
+  function setDarkMode(on) {
+    if (on) {
+      document.body.classList.add('darkmode');
+      document.getElementById('darkmode-toggle').checked = true;
+      localStorage.setItem('darkmode', 'on');
+    } else {
+      document.body.classList.remove('darkmode');
+      document.getElementById('darkmode-toggle').checked = false;
+      localStorage.setItem('darkmode', 'off');
+    }
+  }
+  // Al cargar la página
+  document.addEventListener('DOMContentLoaded', function() {
+    const darkPref = localStorage.getItem('darkmode');
+    setDarkMode(darkPref === 'on');
+    document.getElementById('darkmode-toggle').addEventListener('change', function(e) {
+      setDarkMode(e.target.checked);
+    });
+  });
+</script>
 
 </body>
 
