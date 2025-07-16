@@ -2700,6 +2700,7 @@ section {
   animation: scroll 40s linear infinite;
   -webkit-animation: scroll 40s linear infinite; 
   width: calc(400px * 14);
+  overflow: hidden;
 }
 
 .slider .slide {
@@ -2708,6 +2709,7 @@ section {
 
 .slider .slide img {
   width: 100%;
+  overflow: hidden;
 }
 
 
@@ -2735,7 +2737,7 @@ section {
 
 .icono {
   font-size: 24px;
-  margin-bottom: 10px;3
+  margin-bottom: 10px;
 }
 
 .descripcion {
