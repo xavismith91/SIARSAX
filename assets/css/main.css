@@ -3051,4 +3051,19 @@ h1 {
     color: #ffd700 !important;
   }
 
-  
+  /* ...existing code... */
+body.darkmode input.form-control,
+body.darkmode textarea.form-control,
+body.darkmode select.dropdown {
+  border: 2px solid #4fc3f7 !important; /* azul claro */
+  background-color: #222 !important;
+  color: #fff !important;
+}
+body.darkmode .bg-light {
+  background-color: #222 !important;
+}
+body.darkmode label,
+body.darkmode .form-floating > label {
+  color: #b0bec5 !important;
+}
+/* ...existing code... */
