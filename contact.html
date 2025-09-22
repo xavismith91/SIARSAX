@@ -110,19 +110,19 @@
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="email" class="form-control border-0" name="correo" id="correo" placeholder="Gurdian Email" required>
+                                          <input type="email" class="form-control border-0" name="correo" id="correo" placeholder="correo" required>
                                           <label for="gmail">Correo</label>
                                       </div>
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="text" class="form-control border-0" name="telefono" id="cname" placeholder="Child Name" required>
+                                          <input type="text" class="form-control border-0" name="telefono" id="cname" placeholder="Telefono" required>
                                           <label for="cname">Teléfono (10 digitos)</label>
                                       </div>
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="text" class="form-control border-0" name="servicio" id="cage" placeholder="Child Age" required>
+                                          <input type="text" class="form-control border-0" name="servicio" id="cage" placeholder="Tipo de Servicio" required>
                                           <label for="cage">Tipo de Servicio</label>
                                       </div>
                                   </div>                            
@@ -267,18 +267,6 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- script para alerta de cierre sin terminar de llenar el formulario -->
-<script>
-window.addEventListener('beforeunload', function (e) {
-    // Mostrar un mensaje de confirmación al usuario
-    var confirmationMessage = '¿Estás seguro de que quieres salir? Los datos no guardados se perderán.';
-    
-    // Establecer el mensaje de confirmación
-    e.returnValue = confirmationMessage; // Para navegadores modernos
-    return confirmationMessage; // Para navegadores antiguos
-  });
-
-</script>
 <script>
   // Modo oscuro
   function setDarkMode(on) {
