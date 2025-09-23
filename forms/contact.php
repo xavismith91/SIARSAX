@@ -32,7 +32,7 @@
   
 
     if (mail($correo2,$asunto,$cuerpo,$sheader,$mensaje)) {
-      echo '<script>alert("Su Mensjae ha sido enviado correctamente, espere su confirmación");</script>';
+      echo '<script>alert("Su mensaje ha sido enviado correctamente, espere su confirmación");</script>';
     }else {
       echo '<script>alert("Verifique su información e intente de nuevo");</script>';
     }
