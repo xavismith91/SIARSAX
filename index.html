@@ -4,315 +4,252 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>SIARSA</title>
+
+  <title>Centro de Atención Psicológica Renacer</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <link href="img/logo-siarsa.png" rel="icon">
+
+  <link href="assets/img/logo-psic.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+
+  
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-
-  <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img class="img-fluid" src="img/logosiarsablanco.png" alt="">
-      </a>
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
-          <li><a href="about.html">Nosotros</a></li>
-          <li class="dropdown"><a href="#"><span>Servicios</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="venta.html">Ventas e Instalación </a></li>
-              <li><a href="mantenimientos.html">Mantenimiento y Servicio Técnico </a></li>
-              <li><a href="disenoyconsultoria.html">Diseño y Consultoría</a></li>
-            </ul>
-          </li>
-          <li><a href="politica-privacidad.html">Privacidad</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-          <li>
-              <label class="switch-darkmode" title="Modo oscuro">
-                <input type="checkbox" id="darkmode-toggle">
-                <span class="slider"></span>
-                <i class="bi bi-moon"></i>
-              </label>
-          </li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <section id="hero" class="hero">
-
-    <div class="info d-flex align-items-center">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <img class="img-fluid" src="img/logosiarsablanco.png">
-            <br>
-            <a data-aos="fade-up" data-aos-delay="200" href="contact.html" class="btn-get-started">Solicita una Cotización</a>
-          </div>
+  <!-- Modal de bienvenida -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <!-- Botón de cerrar (icono X) -->
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body">
+          <img src="assets/img/logo-psic.png" alt="Bienvenido" class="img-fluid mb-3" style="max-width: 200px;">
+          <h5 class="mb-3">¡Bienvenido a Renacer!</h5>
+          <button type="button" class="btn btn-primary w-100" id="goToViewBtn">Ir a Talleres</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contacto@centrorenacermx.com</a>
+        <i class="bi bi-phone"></i><a href="tel:+52563574794">5630574694</a>
+      </div>
+      <!-- <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div> -->
+    </div>
+  </div>
 
-      <div class="carousel-item active" style="background-image: url(img/mantenimiento-sistema.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(img/Reparar-aire-acondicionado.jpg.webp)"></div>
-      <div class="carousel-item" style="background-image: url(img/1a09d555-0eb4-4694-bc1d-9a9c8e897e51.JPG)"></div>
-      <div class="carousel-item" style="background-image: url(img/Sistema-de-Control-de-Aire-Comprimido-2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(img/testvalvulas.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(img/09b0cbe0-c8c8-476e-9d32-36696f92fc28.JPG);"></div>
 
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
 
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
+      <h1 class="logo me-auto"><a href="index.html">Centro de Atención Psicológica "Renacer"</a></h1>
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+           <div class="form-check form-switch ms-3">
+              <input class="form-check-input" type="checkbox" id="darkModeSwitch" aria-label="Activar modo oscuro">
+              <label class="form-check-label" for="darkModeSwitch" style="color:#333;">🌙</label>
+           </div>
+          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="#about">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="#juridico">Apoyo Jurídico</a></li>
+         
+          <li class="dropdown"><a href="#"><span>Terapias</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="terapiaindiv.html">Terapia Individual</a></li>
+              <li><a href="terapiapareja.html">Terapia en Pareja</a></li>
+              <li><a href="terapiaempresa.html">Terapia para Empresas</a></li> 
+              <li><a href="terapiaadolescente.html">Terapia para Adolescentes</a></li>
+              <li><a href="terapiafam.html">Terapia Familiar</a></li>
+          </li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href=""><span>Servicios</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+             <li class="dropdown"><a href="#"><span>Talleres</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="constelacionfam.html">Constelación Familiar</a></li>
+                  <li><a href="biomagnetismo.html">BioMagnetismo con imanes</a></li>
+                  <li><a href="conoterapia.html">Conoterapia</a></li> 
+                  <li><a href="alineacionchakras.html">Alineación de Chakras</a></li>
+                  <li><a href="consadicciones.html">Consejería en Adicciones</a></li>
+                </ul>
+              </li>
+               <li class="dropdown"><a href="#"><span>Cursos</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="curso-acertividades.html">Acertividades</a></li>
+                </ul>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="privacidad.html">Privacidad</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+      <a href="index.html#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Quiero Cita</span></a>
 
     </div>
-
+  </header>
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <center><h1>Bienvenido</h1></center>
+     <center><a href="#about" class="btn-get-started scrollto">Comencemos</a></center>
+    </div>
   </section>
 
   <main id="main">
 
-    <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h1 class="text-center">Amplia gama de servicios en sitio </h1>
-        <br>
-        <br>
-        <div class="row gy-4 posts-list">
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/construccion de cuatlos congelados.png" class="img-fluid" alt="">
-              </div>
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Construcción de cuartos de conservación de congelados</h3>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/construccion de naves para secos refigeracioncongelacion.png" class="img-fluid" alt="">
-              </div>
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Construcción de naves para secos (Refrigeración o Congelación)</h3>            
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/ingenieria y evaluacion .png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Ingeniería y Evaluación de instalaciones para brindar la máxima capacidad de sus equipos</h3>                
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/mantenimientoeinstalaciones.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title texto-justificado">Mantenimiento a instalaciones en sector calidad y seguridad</h3>
-
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/mantenimiento a equipoderefrigeracion.png" class="img-fluid" alt="">
-              
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title texto-justificado">Mantenimiento a equipos de refrigeración industriales y de carrocería</h3>
-              </div>
-
-            </div>
-          </div>
-          
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/mantenimientoaracks.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Mantenimiento a racks de compresores (Control, programación y automatización)</h3>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/busquedafugaporuv.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Búsqueda de fugas por medio de la luz UV y aditivos</h3>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/mantenimeintoacuartosconquimicos.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Mantenimiento y limpieza a pisos de cámaras de congelación y refrigeración con productos químicos aprobados por la FDA</h3>
-              </div>
-
-            </div>
-          </div>
-
-
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/caluclode temperaturacontrolada.png" class="img-fluid" alt="">
-              </div>
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Cálculo, suministro e instalación de equipos para temperatura controlada</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/suministroeinstalaciondeextractores.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Suministro e Instalación de extractores</h3>
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/suministrode HVLS.png" class="img-fluid" alt="">
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Suministro e Instalación de HVLS</h3>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/aplicacionpisoepoxico.png" class="img-fluid" alt=""> 
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Aplicación de Piso Epóxico</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/reparacionsistemashidraulicos.png" class="img-fluid" alt="">
-                
-              </div>
-
-              <div class="post-content d-flex flex-column">
-                <h3 class="post-title texto-justificado">Reparación de Sistemas hidráulicos a alta presión</h3>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
-
-
-    <section id="get-started" class="get-started section-bg">
+    <section id="why-us" class="why-us">
       <div class="container">
-        <div class="justify-content-between gy-4">
-          <div class="col-lg-12 d-flex align-items-center" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-              <h3>¿Por qué elegir a SIARSA?</h3>
-              <h5>Tecnología Avanzada</h5>
-              <p class="texto-justificado">Incorporamos las últimas tecnologías en nuestros sistemas para garantizar un rendimiento óptimo y duradero. Desde sistemas de climatización inteligentes hasta controles remotos fáciles de usar, te ofrecemos lo mejor en innovación.</p>
-              <h5>Silenciosos y sin Problemas</h5>
-              <p class="texto-justificado">Nuestros aires acondicionados y sistemas de refrigeración son conocidos por su funcionamiento silencioso y sin problemas. Disfruta de un ambiente tranquilo y fresco sin molestias ruidosas ni interrupciones.</p>
-              <h5>Servicio y Soporte</h5>
-              <p class="texto-justificado">No solo vendemos productos, sino también ofrecemos un excepcional servicio postventa. Nuestro equipo de expertos está disponible para ayudarte con la instalación, el mantenimiento y cualquier consulta que puedas tener.</p>
-              <br>
-              <p classs="texto-justificado">Para garantizar el correcto funcionamiento de una instalación, es necesario verificar el caudal en los conductos, de modo que se proporcione la cantidad correcta de aire renovado y se establezca una determinada temperatura y humedad de los locales.</p>
-              <br>
+              <h3>¿Por qué elegir "Renacer"?</h3>
+              <p class="texto-justificado">
+                Puede ofrecerte una atención integral que aborde tus necesidades emocionales y legales de manera efectiva, garantizando así un proceso de recuperación más completo y satisfactorio.
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Ver Más<i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class='bx bxs-spreadsheet'></i>
+                    <h4>100% de Confidencialidad</h4>
+                    <p class="texto-justificado">Contamos con personal éticamente profesionales para poder ayudarte en tu proceso </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bi bi-brightness-high"></i>
+                    <h4>Ideal para un nuevo comienzo</h4>
+                    <p class="texto-justificado">se brindara un tratamiento integral para mantener en optimas condiciones su salud mental</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Encontrar un sentido a la vida </h4>
+                    <p class="texto-justificado"> por medio de una sana conciencia para elegir un buen camino en la vida con honestidad, Respeto, Responsabilidad y Compresion. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+            <a href="https://www.youtube.com/watch?v=GMGrr4FGCPY" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h1>Nosotros</h1>
+            <p class="texto-justificado">Nuestra finalidad es ofrecerte una nueva oportunidad de vida atravez de tratamientos multidisciplinarios, coadyuvando el bienestar integral y desarrollo personal de nuestros pacientes y familia.</p>
+            <br>
+            <br>
+            <p class="texto-justificado"> <strong><h3>Renacer</h3></strong> Es un espacio dedicado a elevar la calidad de vida de las familias, parejas, grupos, y usuarios en general de manera integral, Contamos con diversos tipos de terapias psicológicas, talleres, y platicas por lo tanto, al ser nuestro principal interés el poner al alcance de la comunidad los servicios de psicoterapia nuestro público objeto, se segregará  dependiendo su edad.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    
+    <section id="talleres" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Talleres</h2>
+          <p></p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-tired"></i></div>
+              <h4><a href="">Manejo de Estrés y la Ansiedad</a></h4>
+              <p class="texto-justificado">Talleres diseñados para enseñar tecnicas y estrategias para controlar el estres y la ansiedad en la vida diaria.</p>
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-person-raised-hand"></i></div>
+              <h4><a href="">Autoestima y Empoderamiento.</a></h4>
+              <p class="texto-justificado">Talleres enfocados en fortalecer la autoestima y desarrollar un sentido de empoderamiento personal </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="ri-user-voice-line"></i></div>
+              <h4><a href="">Resolución de Conflictos</a></h4>
+              <p>Tallleres que te enseñaràn habilidades de comunicacion efectiva y estrategias para resolver conflictos de manera constructiva.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-file-person"></i></div>
+              <h4><a href="">Prevención de Acoso Escolar y Laboral</a></h4>
+              <p class="texto-justificado">Talleres Dirigidos a prevenir el acoso escolar (bulling) o laboral (mobbing) mediante la sensibilización y el desarrollo de habilidades paraa abordar estas situaciones.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-angry"></i></div>
+              <h4><a href="">Gestión Emocional</a></h4>
+              <p class="texto-justificado">Talleres centrados en identificar y gestionar emociones de manera saludable, incluyendo la regularizaciòn emocional y la inteligencia emocional.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-male-female"></i></div>
+              <h4><a href="">Apoyo a Víctimas de Violencia.</a></h4>
+              <p class="texto-justificado">Talleres que ofrecen apoyo psicológico y recursos legales para personas que han sido víctimas de violencia doméstica.</p>
+            </div>
+          </div>
 
         </div>
 
@@ -320,242 +257,786 @@
     </section>
 
 
-    <section id="recent-blog-posts" class="recent-blog-posts">
-      <div class="container" data-aos="fade-up"">
-      <h1 class="text-center">Trabajamos con equipos de las mejores marcas</h1>
-     <br>
-     <br>
-   <div class="slider">
-    <div class="slider-track">
-      <div class="slide ">
-        <img src="img/lenoxlogo.png" alt="imagen1">
+    <div class="container px-4 py-5" id="custom-cards">
+      <center><h2 class="pb-2 border-bottom">Tipos de Terápia</h2> </center>
+  
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./assets/img/terapiah.avif');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terapia Individual</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="assets/img/logo-psic.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                  <small><a class="text-white" href="terapiaindiv.html">Ver Más</a></small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                  <small></small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./assets/img/vale-a-pena-fazer-terapia-de-casal15223-768x512.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terapia en Pareja</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="assets/img/logo-psic.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                  <small><a class="text-white" href="terapiapareja.html">Ver Más</a></small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                  <small></small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./assets/img/4dd76519-c7f1-4b2c-964e-9a36a80d8438.JPG');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terapia para Empresas</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="assets/img/logo-psic.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                  <small><a class="text-white" href="terapiaempresa.html">Ver Más</a></small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./assets/img/E-PsicoterapiaAdolescentes-640x400.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terapia para Adolescentes</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="assets/img/logo-psic.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                  <small><a class="text-white" href="terapiaadolescente.html">Ver Más</a></small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                  <small></small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./assets/img/Terapia-Familiar-para-Mejorar-la-Comunicacion.jpeg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Terapia Familiar</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="assets/img/logo-psic.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                  <small><a class="text-white" href="terapiafam.html">Ver Más</a></small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                  <small></small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/logo-aires-mirage.png" alt="imagen2">
-      </div>
-      <div class="slide">
-        <img src="img/Honeywell-Logo.png" alt="imagen8">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/bigassfans.png" alt="imagen3">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/trane_logo.png" alt="imagen4">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/f.1649261342.jpg" alt="imagen5">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/kalefanslogo.png" alt="imagen8">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/png-transparent-lg-logo-lg-logo-television-text-trademark.png" alt="imagen6">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/bohn-logo.png" alt="imagen7">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/bigassfans.png" alt="imagen1">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/logo-aires-mirage.png" alt="imagen2">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/midea-1logo.svg" alt="imagen3">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/lenoxlogo.png" alt="imagen4">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/f.1649261342.jpg" alt="imagen5">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/Honeywell-Logo.png" alt="imagen8">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/bohn-logo.png" alt="imagen6">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      <div class="slide">
-        <img src="img/logo-mitsubishi-electric-lasser.jpeg" alt="imagen7">
-      </div>
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-    </div>
     </div>
 
+
+
+
+ 
+ <section id="juridico" class="departments">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Área Jurídica</h2>
+      <p class="texto-justificado"><center>Contamos con los mejores abogados especializados en su área para poder abordar y apoyar tu caso.</center></p>
+    </div>
+
+    <div class="row gy-4">
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Pensión Alimenticia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Divorcios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Guardia y Custodia Familiar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Violencia de Género</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Juicio Testamentario e Intestamentario</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row gy-4">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Pensión Alimenticia</h3>
+                <p class="fst-italic texto-justificado">Es el monto que el deudor alimentario tiene a obligación de pagar el acreedor. (Infantil o Familiar) </p>
+                <p class="texto-justificado">¿Qué Aborda?
+                  <ul>
+                    <li>Alimento</li>
+                    <li>Vestimenta</li>
+                    <li>Servicios Médicos</li>
+                    <li>Estudios</li>
+                    <li>Actividades Recreativas</li>
+                    <li>Vivienda</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <div class="row gy-4">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Divorcios</h3>
+                <p class="fst-italic texto-justificado">Proceso legal mediante el cual un matrimonio es disuelto legalmente, poniendo fin a los lazos matrimoniales entre dos personas.</p>
+                <p class="texto-justificado">Tipos de Divorcio:
+                 <br>
+                  <ul>
+                    <li>Voluntario: Ante Juzgado</li>
+                    <li>Incusado: Ante juzgado</li>
+                    <li>Administrativo: Ante registro Civil</li>
+                  </ul>
+                </p>
+
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-3">
+            <div class="row gy-4">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Guardia Y Custodia Familiar</h3>
+                <p class="fst-italic texto-justificado">Consiste en los derechos y olbigaciones que tienen los padres en relación con los hijos menores, niñas y adoleescentes y su proceso de tramites.</p>
+                <p class="texto-justificado">Nuestros Servicios comprenden en: 
+                  <ul>
+                    <li>Protección Física </li>
+                    <li>Bienestar Emocional</li>
+                    <li>Educación y Toma de Desiciones Médicas</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-4">
+            <div class="row gy-4">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Violencia de Género</h3>
+                <p class="fst-italic texto-justificado">Surge de la misogínia en los espacios físicos y las normas culturales de la vida diaria</p>
+                <p class="texto-justificado"> Dado el caso sea en relaciones interpersonales 
+                  <br>
+                  <ul>
+                    <li>Pareja</li>
+                    <li>Acoso Laboral y Escolar</li>
+                    <li>Violación</li>
+                    <li>Discriminación</li>
+                    <li>Violencia Directa hacia el hombre y mujer</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-5">
+            <div class="row gy-4">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Juicio Testamentario e Intestamentario</h3>
+                <p class="fst-italic texto-justificado">Proceso legal que tiene lugar cuando una persona fallece y deja bienes y propiedades que deben ser distribuidos entre sus herederos legales.</p>
+                <p class="texto-justificado">Suele ser llevado a cabo ante un tribunal competente y puede ser un proceso complejo que involucra a diversos interesados, como herederos, acreedores, albaceas (si hay testamento) y posibles beneficiarios que puedan impugnar la validez del testamento o disputar la distribución de los bienes.
+                  <br>
+                  <ul>
+
+                  </ul>
+
+
+                </p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
     
-   
-    
+    <section id="appointment" class="appointment section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Ponte en contacto</h2>
+            </div>
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="nombre" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="correo" id="email" placeholder="Correo" data-rule="email" required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="tel" class="form-control" name="telefono" id="phone" placeholder="Telefono" data-rule="minlen:4" required>
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <input type="date" name="fecha" class="form-control datepicker" id="date" placeholder="Fehca de cita" data-rule="minlen:4" required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="departamento" id="departamento" class="form-select">
+                <option value="">Selecciona Departamento</option>
+                <option value="Departamento de Psicología">Departmento de Psicología</option>
+                <option value="Departamento Jurídico">Departmento Jurídico</option>
+              </select>
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="especialista" id="especialista" class="form-select">
+                <option value="">Selecciona Especialista</option>
+                <option value="Lic. Esteffanny Escalante">Lic. Estefany Escalante</option>
+                <option value="Const. Aurora Chávez">Const. Aurora Chávez</option> 
+              </select>
+              <div class="validate"></div>
+            </div>
+            <center><div class="col-md-4 form-group mt-3">
+              <select name="hora" id="hora" class="form-select">
+                <option value="">Selecciona Horario</option>
+                <option value="9:00 am"> 9:00 am</option>
+                <option value="10:00 am"> 10:00 am</option>
+                <option value="11:00 am"> 11:00 am</option>
+                <option value="12:00 am"> 12:00  am</option>
+                <option value="1:00 pm"> 1:00  pm</option>
+                <option value="2:00 pm"> 2:00  pm</option>
+                <option value="3:00 pm"> 3:00  pm</option>
+                <option value="4:00 pm"> 4:00  pm</option>
+                <option value="5:00 pm"> 5:00  pm</option>
+                <option value="6:00pm">  6:00  pm</option>
+                <option value="7:00pm">  7:00  pm</option>
+              </select>
+              <div class="validate"></div>
+            </div></center>
+          </div>
+
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje (Opcional)"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="text-center">
+            <button class="appointment-btn scrollto" type="button" id="submitButton">Ponerme en Contacto</button>
+          </div>
+        </form>
+      </div>
     </section>
+
+   
+   <section id="testimonials" class="testimonials">
+    <div class="container">
+     <center><h1>Talleres disponibles</h1></center>
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+
+                <h3>BioMagnetismo</h3>
+                <h4>Terápia con Imánes</h4>
+                <p class="texto-justificado">
+                 <ul>
+                  <li class="texto-justificado">No produce daños ni efectos colateriales</li>
+                  <li class="texto-justificado">Mitiga el dolor y la inflamación</li>
+                  <li class="texto-justificado">Ayuda a eliminar virus y bacterias</li>
+                  <li class="texto-justificado">Incrementa la circulación sanguínea</li>
+                  <li class="texto-justificado">Incrementa el oxígeno en los tejidos</li>
+                  <li class="texto-justificado">Aumenta la energía y la vitalidad</li>
+                  <li class="texto-justificado">Ayuda a aliviar diversas enfermedades</li>
+                  <br>
+                  <div><a href="biomagnetismo.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Me Interesa</a></div>
+                  <br>
+                 </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                
+                <h3>Constelación</h3>
+                <h4>Familiar</h4>
+                <p class="texto-justificado">
+                  <p class="texto-justificado">
+                    Las Constelaciones se llevan a cabo en un Ambiente Armónico, Relajado y Seguro. El objetivo es descubrir y sanar los comportamientos, percepciones, emociones, patrones y estructuras familiares que han quedado en el Inconsciente y que afectan nuestros pensamientos y comportamientos, puedes constelar a la familia, emociones, enfermedades etcétera.                   
+                  </p>
+                   <p>El proceso es muy interesante y poderoso (una sesión de constelación puede ser equivalente a 5 sesiones de psicología)</p>
+                    <br>
+                    <div><a href="constelacionfam.html"  class="appointment-btn scrollto"><span class="d-none d-md-inline">Me Interesa</a></div>
+                    <br>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <h3>Alineación de Chakras</h3>
+   
+                <p class="texto-justificado">
+                    ¿Alguna vez has sentido que algo no está en armonía en tu vida?, ¿Te sientes cansado, ansioso o desconectado de tus emociones? Si es asi, es posible que necesites alinear tus chakras
+                </p>
+                <br>
+                <h4>¿Qué son lo chakras?</h4>
+                <p class="texto-justificado">
+                  Los chakras son centros de energía en el cuerpo humano que se relacionan con diferentes aspectos de nuestra vida, como la salud física, la emocional y la espiritualidad                   
+              </p>
+              <p class="texto-justificado"> Cuando estos centros de energía estan desequilibrados o bloquados, pueden afectar negativamente en nuestra salud y bienestar.</p>
+              <div><a href="alineacionchakras.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Me Interesa</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <h3>Tratamiento de Conoterapia</h3>
+                <br>
+                <h4>¿Qué beneficios tiene esta terapia?</h4>
+                <p class="texto-justificado">
+                 <ul>
+                  <li class="texto-justificado">Ayuda con la sinusitis</li>
+                  <li class="texto-justificado">Vértigo</li>
+                  <li class="texto-justificado">Dolor de Cabeza</li>
+                  <li class="texto-justificado">Personas que producen mucha cerilla</li>
+                  <li class="texto-justificado">Personas que viajan</li>
+                  <li class="testo-justificado">Ayuda a las personas que constantemente padecen de gripe y garganta</li>
+                 </ul>
+              </p>
+              <!-- <p class="texto-justificado"> Cuando estos centros de energía estan desequilibrados o bloquados, pueden afectar negativamente en nuestra salud y bienestar.</p> -->
+              <div><a href="conoterapia.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Me Interesa</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <h3>Consejería en Adicciones</h3>
+                <br>
+                <p class="texto-justificado">
+                  La Consejería en Adicciones es un proceso de apoyo especializado dirigido a las personas que sufren de trasntornos con el uso y abuso de sustancias nocivas a la salud o comportamientos adictivos, El objetivo principal es ayudar a la persona a comprender su adicción, desarrollar habilidades para enfrentarla y alcanzar una vida saludable y libre de dependencia
+              </p>
+              <!-- <p class="texto-justificado"> Cuando estos centros de energía estan desequilibrados o bloquados, pueden afectar negativamente en nuestra salud y bienestar.</p> -->
+              <div><a href="consadicciones.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Me Interesa</a></div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section>
+
+    
    
 
+   
+    <section id="frecuentes" class="faq section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Preguntas Frecuentes</h2>
+        </div>
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq-list-1" > ¿Cómo puedo saber si necesito asesoramiento psicológico, asesoramiento legal o ambos? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
+                <p class="texto-justificado">
+                  Si se está experimentando dificultades emocionales, como la ansiedad, depresión, estres o problemas de relación.
+                  Si estas enfrentando por problemas legales, como disputas familiares, problemas de custidia, divorcio o problemas laborales.
+                  En caso donde los problemas legales y emocionales se entrelazan, como casos de abuso domestico, acoso laboral, o casos de trauma con consecuencias legales.
+                  Si un problema emocional está interfiriendo con tu capacidad para manejar asuntos legales importantes.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed"> ¿Cómo funciona la confidencialidad en el centro? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p class="texto-justificado">  
+                  La confidencialidad en el centro se establece para salvaguardar la privacidad de los individuos. Se rige por excepciones limitadas que se aplican con cautela y solo en circunstancias específicas. Antes de divulgar cualquier información, se obtiene el consentimiento informado de los involucrados. Se implementan rigurosas medidas de seguridad de registros para proteger la información confidencial de cualquier acceso no autorizado. Además, se garantiza la confidencialidad incluso en los grupos terapéuticos, donde se fomenta un ambiente seguro y de confianza para el desarrollo personal.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">   ¿Qué debo esperar durante una sesión de terapia o consulta legal? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p class="texto-justificado">
+                  Durante una sesión de terapia o consulta legal, puedes esperar un ambiente acogedor y confidencial diseñado para que te sientas seguro y cómodo para expresarte libremente. El profesional te recibirá con empatía y respeto, escuchando atentamente tus preocupaciones y necesidades. En el caso de la terapia, se te animará a explorar tus emociones, pensamientos y comportamientos para comprender mejor tus desafíos y encontrar soluciones. En una consulta legal, se te proporcionará orientación experta sobre tus derechos, opciones y posibles cursos de acción. En ambos casos, se fomenta una relación de confianza y colaboración entre tú y el profesional para trabajar juntos hacia tus metas y objetivos específicos.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed"> ¿Qué pasa si necesito ayuda urgente fuera del horario laboral? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p class="texto-justificado">
+                  Si te encuentras en una situación de emergencia fuera del horario laboral y necesitas ayuda urgente, existen opciones disponibles para recibir asistencia. Muchos servicios de atención médica y de salud mental ofrecen líneas directas de emergencia que funcionan las 24 horas del día, los 7 días de la semana. Además, puedes comunicarte con servicios de emergencia locales como el número de teléfono de emergencias (por ejemplo, 911 en Estados Unidos) para recibir ayuda inmediata en situaciones que requieran atención médica urgente o intervención policial. También puedes contactar a amigos o familiares de confianza para obtener apoyo emocional y buscar recursos adicionales. Es fundamental recordar que siempre hay ayuda disponible, incluso fuera del horario laboral, y se alienta a buscarla en caso de necesidad urgente.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">¿Cómo puedo programar una cita y cuánto tiempo de anticipación debo hacerlo? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p class="texto-justificado">
+                  Para programar una cita, generalmente puedes hacerlo a través de varios métodos, dependiendo del servicio o profesional que estés buscando. Puedes llamar por teléfono a la oficina o consultorio del profesional, enviar un correo electrónico o utilizar plataformas en línea si están disponibles. En cuanto al tiempo de anticipación para programar una cita, puede variar según la disponibilidad del profesional y la demanda de citas. En general, se recomienda programar con la mayor anticipación posible para asegurarte de obtener el horario que mejor se ajuste a tus necesidades. 
+
+                  <br>
+                  <p class="texto-justificado">Profesionales pueden requerir que programes con semanas de anticipación, especialmente si tienen una agenda muy ocupada. Sin embargo, en casos de emergencia o necesidad urgente, algunos profesionales pueden ofrecer citas más rápidas o incluso servicios de atención de urgencia. Si tienes restricciones de tiempo específicas o necesidades urgentes, es recomendable comunicarte directamente con el profesional o la oficina para verificar su disponibilidad y opciones de programación.</p> 
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    
+
+    
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Galería </h2>
+            </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/exposición.JPG" class="galelry-lightbox">
+                <img src="assets/img/exposición.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/be3c2125-fc70-4c9e-9006-c60f99fc4cb5.JPG" class="galelry-lightbox">
+                <img src="assets/img/be3c2125-fc70-4c9e-9006-c60f99fc4cb5.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/renacer1.JPG" class="galelry-lightbox">
+                <img src="assets/img/renacer1.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/renacer2.JPG" class="galelry-lightbox">
+                <img src="assets/img/renacer2.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/renacer3.JPG" class="galelry-lightbox">
+                <img src="assets/img/renacer3.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/renacer4.JPG" class="galelry-lightbox">
+                <img src="assets/img/renacer4.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/be3c2125-fc70-4c9e-9006-c60f99fc4cb5.JPG" class="galelry-lightbox">
+                <img src="assets/img/e553b523-7fcb-42e0-8c7d-83081c65134c.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/e8343351-9e70-4729-89bb-7eebde4122c9.JPG" class="galelry-lightbox">
+                <img src="assets/img/e8343351-9e70-4729-89bb-7eebde4122c9.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/img2.JPG" class="galelry-lightbox">
+                <img src="assets/img/img2.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller-oficina.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller-oficina.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/2e75bf27-b0d9-4e11-bd1a-b9f9521c6c96.JPG" class="galelry-lightbox">
+                <img src="assets/img/2e75bf27-b0d9-4e11-bd1a-b9f9521c6c96.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <!-- <br>
+          <br>
+          <center><h1><strong><br><br><br>Curso "Acertividad"<br><br><br></strong> </h1></center>
+          <br><br>
+           <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller1.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller1.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+           <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller2.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller2.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller3.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller3.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+           <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller4.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller4.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+           <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller5.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller5.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+           <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller6.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller6.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller7.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller7.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+           <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/taller/taller8.JPG" class="galelry-lightbox">
+                <img src="assets/img/taller/taller8.JPG" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section>  -->
+    <br>
+    <br>
+    <br>
+    <br>
   </main>
 
-   
-  <footer id="footer" class="footer">
-    <div class="footer-content position-relative">
+  
+  <footer id="footer">
+
+    <div class="footer-top">
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>SIARSA</h3>
-              <p class="texto-justificado">
-                <strong>Teléfono:</strong>&nbsp;<a href="tel:+525579290992" style="color: white">55-7929-0992</a><br>
-                <strong>Correo:</strong><a href="mailto:mario.r@siarsa.com.mx" style="color: white;">mario.r@siarsa.com.mx</a><br>
-              </p>
-              <div class="social-links d-flex mt-3">
-                <a href="https://api.whatsapp.com/send?phone=5579290992" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
-                <!-- <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a> -->
-                <a href="https://www.linkedin.com/company/siarsa/about/" target="_blank" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
+          <div class="col-lg-3 col-md-5 footer-contact">
+            <h3>Centro de Atención Psicológica y Jurídica "Renacer"</h3>
           </div>
 
-          <div class="col-lg-2 col-md-3 footer-links">
+          <div class="col-lg-5 col-md-6 footer-links">
             <h4>Menú</h4>
             <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="about.html">Nosotros</a></li>
-              <li><a href="contact.html">Contacto</a></li>
-              <li><a href="politica-privacidad.html">Privacidad</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#hero">Inicio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">Nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#talleres">Talleres</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#juridico">Apoyo Jurídico</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#frecuentes">Preguntas Frecuentes</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="privacidad.html">Políticas de Privacidad</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Servicios</h4>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Talleres</h4>
             <ul>
-              <li><a href="venta.html">Venta e Instalación</a></li>
-              <li><a href="mantenimientos.html">Mantenimiento y Servicio Técnico</a></li>
-              <li><a href="disenoyconsultoria.html">Diseño y Consultoría</a></li>
-             <!--  <li><a href="sistemasespeciales.html">Sistemas Especializados</a></li> -->
+              <li><i class="bx bx-chevron-right"></i> <a href="constelacionfam.html">Constelación Familiar</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="biomagnetismo.html">BioMagnetismo con imanes</a> </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="conoterapia.html">Conoterapia</a></li>  </li>
+              <li><i class="bx bx-chevron-right"></i> <a href="alineacionchakras.html">Alineación de Chakras</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="consadicciones.html">Consejería en Adicciones</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="curso-acertividades.html">Curso "Acertividades"</a></li>
             </ul>
           </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nuestros Horarios</h4>
-            <ul>
-              <li>Lunes a Viernes </li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <br>
-            <br>
-            <ul>
-              <li>7:00 AM – 5:00 PM</li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </div>
 
-
-
     <div id="cookie-consent">
-      <p>Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra <a href="politica-privacidad.html">Política de Privacidad</a> y el uso de cookies.</p>
+      <p>Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra <a href="privacidad.html">Política de Privacidad</a> y el uso de cookies.</p>
       <div>
           <button id="accept-cookies">Aceptar</button>
           <button id="decline-cookies">Denegar</button>
       </div>
   </div>
 
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>SIARSA</span></strong>. Todos los derechos son reservados. <script>document.write(new Date().getFullYear())</script>
-        </div>
-        <div class="credits">
-          Consulta Nuestro&nbsp;&nbsp;&nbsp;<a href="politica-privacidad.html">Aviso de Privacidad</a> 
+          &copy; Copyright <strong><span>Centro de Atención Psicologica y Jurídica "Renacer" </span></strong>. Todos Los Derechos Son Reservados <script>document.write(new Date().getFullYear());</script>
         </div>
       </div>
+      <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div> -->
     </div>
-
   </footer>
-  
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
 
   <!-- <div id="preloader"></div> -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- <script>
+    // Mostrar el modal al cargar la página y mostrar las opciones de taller
+    window.addEventListener('DOMContentLoaded', function () {
+      var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+      welcomeModal.show();
+
+      document.getElementById('goToViewBtn').onclick = function () {
+        // Redirige a la sección de talleres (puedes cambiar el href)
+        window.location.href = 'plansubcono.html';
+      };
+    });
+  </script> -->
 
   <script>
     // Verificar si el usuario ya ha aceptado o denegado las cookies
@@ -573,30 +1054,90 @@
            window.location.href = 'https://www.google.com';
        });
 </script>
- 
-  <script src="assets/js/main.js"></script>
 
-  <!-- script para el modo obscuro -->
+<script>
+  document.getElementById('submitButton').addEventListener('click', function () {
+    // Obtener los valores de los campos del formulario
+    const nombre = document.getElementById('name').value.trim();
+    const correo = document.getElementById('email').value.trim();
+    const telefono = document.getElementById('phone').value.trim();
+    const fecha = document.getElementById('date').value.trim();
+    const departamento = document.getElementById('departamento').value.trim();
+    const especialista = document.getElementById('especialista').value.trim();
+    const hora = document.getElementById('hora').value.trim();
+
+    // Crear un arreglo para almacenar los campos que están vacíos
+    const errores = [];
+
+    if (!nombre) errores.push('Nombre');
+    if (!correo) errores.push('Correo');
+    if (!telefono) errores.push('Teléfono');
+    if (!fecha) errores.push('Fecha de cita');
+    if (!departamento) errores.push('Departamento');
+    if (!especialista) errores.push('Especialista');
+    if (!hora) errores.push('Horario');
+
+    // Validar si hay errores
+    if (errores.length > 0) {
+      // Mostrar alerta de error
+      Swal.fire({
+        title: 'Campos incompletos',
+        text: `Por favor completa los siguientes campos: ${errores.join(', ')}`,
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    } else {
+      // Si todos los campos están completos, mostrar alerta de éxito
+      Swal.fire({
+        title: '¡Datos enviados correctamente!',
+        text: 'Nos pondremos en contacto contigo lo antes posible.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Si el usuario confirma, enviar el formulario
+          document.querySelector('.php-email-form').submit();
+        }
+      });
+    }
+  });
+</script>
+
+<!-- script para mostrar el modal de bienvenida -->
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function () {   
+    // Verificar si el usuario ya ha visto el modal
+    if (!localStorage.getItem('modalShown')) {
+      // Mostrar el modal de bienvenida
+      var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+      welcomeModal.show();
+
+      // Marcar que el modal ya se ha mostrado
+      localStorage.setItem('modalShown', 'true');
+    }
+  });
+</script> -->
+
+<!-- script para salir sin terminar de llenar el formulario -->
+
+
+  <script src="assets/js/main.js"></script>
 <script>
   // Modo oscuro
-  function setDarkMode(on) {
-    if (on) {
-      document.body.classList.add('darkmode');
-      document.getElementById('darkmode-toggle').checked = true;
-      localStorage.setItem('darkmode', 'on');
-    } else {
-      document.body.classList.remove('darkmode');
-      document.getElementById('darkmode-toggle').checked = false;
-      localStorage.setItem('darkmode', 'off');
-    }
+  const darkSwitch = document.getElementById('darkModeSwitch');
+  // Cargar preferencia
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    darkSwitch.checked = true;
   }
-  // Al cargar la página
-  document.addEventListener('DOMContentLoaded', function() {
-    const darkPref = localStorage.getItem('darkmode');
-    setDarkMode(darkPref === 'on');
-    document.getElementById('darkmode-toggle').addEventListener('change', function(e) {
-      setDarkMode(e.target.checked);
-    });
+  darkSwitch.addEventListener('change', function () {
+    if (this.checked) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'disabled');
+    }
   });
 </script>
 </body>
