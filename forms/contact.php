@@ -2,12 +2,12 @@
     $nombre =$_POST["nombre"];
     $mensaje=$_POST["message"];
     $correo = $_POST["correo"]; // correo que ingresan en el formulario
-    $correo2 = 'mario.r@siarsa.com.mx';// correo en donde van a llegar los datos del formulario 
+    $correo2 = 'sistemas@ce2000.mx';// correo en donde van a llegar los datos del formulario 
     $telefono = $_POST['telefono'];
     $tiposervicio = $_POST['servicio'];
     $equipo = $_POST['equipo'];
     $marca = $_POST['marca'];
-    $remitente= "SIARSA";
+    $remitente = "no-reply@siarsa.com.mx"; // Cambia a un correo válido
     $asunto= 'Cotización Cliente';
     $cuerpo="
     <html> 
@@ -18,8 +18,8 @@
       <h3> Tipo de Servicio: $tiposervicio </h3>
       <h3> Marca: $marca </h3>
       <h3> Equipo: $equipo </h3>
-      <h3> Teléfono de Contacto: $telefono</h3
-      <h3> $mensaje </h5>
+      <h3> Teléfono de Contacto: $telefono</h3>
+      <h3> $mensaje </h3>
       <h3> SIARSA 2024 </h3>
     </body> 
     </html> 
@@ -31,7 +31,7 @@
   
   
 
-    if (mail($correo2,$asunto,$cuerpo,$sheader,$mensaje)) {
+    if (mail($correo2, $asunto, $cuerpo, $sheader)) { // Elimina el quinto parámetro
       echo '<script>alert("Su mensaje ha sido enviado correctamente, espere su confirmación");</script>';
     }else {
       echo '<script>alert("Verifique su información e intente de nuevo");</script>';
@@ -41,4 +41,3 @@
 
 
 ?>
- 
