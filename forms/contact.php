@@ -7,7 +7,7 @@
     $tiposervicio = $_POST['servicio'];
     $equipo = $_POST['equipo'];
     $marca = $_POST['marca'];
-    $remitente = "no-reply@siarsa.com.mx"; // Cambia a un correo válido
+    $remitente= "SIARSA";
     $asunto= 'Cotización Cliente';
     $cuerpo="
     <html> 
@@ -18,8 +18,8 @@
       <h3> Tipo de Servicio: $tiposervicio </h3>
       <h3> Marca: $marca </h3>
       <h3> Equipo: $equipo </h3>
-      <h3> Teléfono de Contacto: $telefono</h3>
-      <h3> $mensaje </h3>
+      <h3> Teléfono de Contacto: $telefono</h3
+      <h3> $mensaje </h5>
       <h3> SIARSA 2024 </h3>
     </body> 
     </html> 
@@ -31,13 +31,14 @@
   
   
 
-    if (mail($correo2, $asunto, $cuerpo, $sheader)) { // Elimina el quinto parámetro
-      echo '<script>alert("Su mensaje ha sido enviado correctamente, espere su confirmación");</script>';
+    if (mail($correo2,$asunto,$cuerpo,$sheader,$mensaje)) {
+      // echo '<script>alert("Su Mensaje ha sido enviado correctamente, espere su confirmación");</script>';
     }else {
-      echo '<script>alert("Verifique su información e intente de nuevo");</script>';
+      // echo '<script>alert("Verifique su información e intente de nuevo");</script>';
     }
 
     echo '<script>window.location.href = "../index.html";</script>';
 
 
 ?>
+ 

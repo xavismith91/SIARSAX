@@ -26,7 +26,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link href="assets/vendor/php-email-form" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -89,41 +89,38 @@
 
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-
         </div>
-
         <div class="row gy-4 mt-1">         
           <div class="col-lg-12">
             <p class="texto-justificado"><h1 class="text-center">Deja tus datos y nuestro equipo se pondrá en contacto</h2></p>
               <div class="container-fluid py-5">
-                  <form action="forms/contact.php" method="POST" role="form" >
+                  <form action="forms/contact.php" method="POST" role="form">
                   <div class="row justify-content-center">
                       <div class="col-lg-7">
                           <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
                               <div class="row g-3">
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="text" class="form-control border-0" name="nombre" id="gname" placeholder="Gurdian Name" required>
+                                          <input type="text" class="form-control border-0" name="nombre"  placeholder="nombre" required>
                                           <label for="gname">Nombre</label>
                                       </div>
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="email" class="form-control border-0" name="correo" id="correo" placeholder="correo" required>
+                                          <input type="email" class="form-control border-0" name="correo"   placeholder="Email" required>
                                           <label for="gmail">Correo</label>
                                       </div>
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="text" class="form-control border-0" name="telefono" id="cname" placeholder="Telefono" required>
-                                          <label for="cname">Teléfono (10 digitos)</label>
+                                          <input type="text" class="form-control border-0" name="telefono"  placeholder="telefono" required>
+                                          <label for="gname">Teléfono (10 digitos)</label>
                                       </div>
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="text" class="form-control border-0" name="servicio" id="cage" placeholder="Tipo de Servicio" required>
-                                          <label for="cage">Tipo de Servicio</label>
+                                          <input type="text" class="form-control border-0" name="servicio"  placeholder="Tipo servicio" required>
+                                          <label for="gname">Tipo de Servicio</label>
                                       </div>
                                   </div>                            
                                   <select class="dropdown col-sm-6" name="marca" id="opcion" name="opcion">
@@ -143,7 +140,7 @@
                                   <br>
                                   <div class="col-12">
                                       <div class="form-floating">
-                                          <textarea class="form-control border-0" name="message" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                          <textarea class="form-control border-0" name="message" placeholder="Deje un mensaje aqui"  style="height: 100px"></textarea>
                                           <label for="message">Mensaje</label>
                                       </div>
                                   </div>
@@ -156,7 +153,7 @@
                   </div>
                   </form>
                   <br>
-                  <p class="texto-justificado text-center"><a href="politica-privacidad.html">Consulta Nuestros Términos y Condiciones</a> </h3></p> 
+                  <p class="texto-justificado text-center" ><a href="politica-privacidad.html">Consulta Nuestros Términos y Condiciones</a> </h3></p> 
           </div>
     </section>
 
@@ -228,7 +225,7 @@
           &copy; Copyright <strong><span>SIARSA</span></strong>. Todos los derechos son reservados.<script>document.write(new Date().getFullYear())</script>
         </div>
         <div class="credits">
-          Consulta Nuestro&nbsp;&nbsp;&nbsp;<a href="politica-privacidad.html">Aviso de Privacidad</a> 
+          Consulta Nuestro&nbsp;&nbsp;&nbsp;<a class="color: white" href="politica-privacidad.html">Aviso de Privacidad</a> 
         </div>
       </div>
     </div>
@@ -267,10 +264,11 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
 
+ 
 <script>
   // Modo oscuro
   function setDarkMode(on) {
-    if (on) {.
+    if (on) {
       document.body.classList.add('darkmode');
       document.getElementById('darkmode-toggle').checked = true;
       localStorage.setItem('darkmode', 'on');
@@ -288,6 +286,55 @@
       setDarkMode(e.target.checked);
     });
   });
+</script>
+
+<!-- ...existing code... -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+document.querySelector('form[action="forms/contact.php"]').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obtén los valores
+    const nombre = this.nombre.value.trim();
+    const correo = this.correo.value.trim();
+    const telefono = this.telefono.value.trim();
+    const servicio = this.servicio.value.trim();
+    const marca = this.marca.value;
+    const equipo = this.equipo.value;
+    const mensaje = this.message.value.trim();
+
+    let errores = [];
+
+    // Validaciones
+    if (!nombre) errores.push("Nombre");
+    if (!correo || !/^[\w\.-]+@[\w\.-]+\.\w{2,}$/.test(correo)) errores.push("Correo válido");
+    if (!telefono || !/^\d{10}$/.test(telefono)) errores.push("Teléfono (10 dígitos)");
+    if (!servicio) errores.push("Tipo de Servicio");
+    if (!marca) errores.push("Marca");
+    if (!equipo) errores.push("Equipo");
+    if (!mensaje) errores.push("Mensaje");
+
+    if (errores.length > 0) {
+        Swal.fire({
+            icon: "error",
+            title: "Campos incompletos o inválidos",
+            text: "Por favor completa correctamente: " + errores.join(", "),
+            confirmButtonText: "Aceptar"
+        });
+        return;
+    }
+
+    // Si todo está bien, envía el formulario
+    Swal.fire({
+        icon: "success",
+        title: "¡Enviando!",
+        text: "Tu mensaje se está enviando...",
+        showConfirmButton: false,
+        timer: 1500
+    }).then(() => {
+        this.submit();
+    });
+});
 </script>
 
 </body>
