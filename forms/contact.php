@@ -1,13 +1,15 @@
 <?php
-    $nombre =$_POST["nombre"];
-    $mensaje=$_POST["message"];
-    $correo = $_POST["correo"]; // correo que ingresan en el formulario
-    $correo2 = 'sistemas@ce2000.mx';// correo en donde van a llegar los datos del formulario 
-    $telefono = $_POST['telefono'];
+    $nombre =$_POST['nombre'];
+    $correo = $_POST['correo']; // correo que ingresan en el formulario
     $tiposervicio = $_POST['servicio'];
+    $marca = $_POST['marca'];    
     $equipo = $_POST['equipo'];
-    $marca = $_POST['marca'];
-    $remitente= "SIARSA";
+    $telefono = $_POST['telefono'];
+    $mensaje=$_POST['message'];
+    
+    $correo2 = 'sistemas@ce2000.mx';// correo en donde van a llegar los datos del formulario 
+
+    // $remitente= "SIARSA";
     $asunto= 'Cotización Cliente';
     $cuerpo="
     <html> 
@@ -24,7 +26,7 @@
     </body> 
     </html> 
     ";
-    $sheader="From:".$remitente."\n";
+    // $sheader="From:".$remitente."\n";
     $sheader=$sheader."X-Mailer:PHP/".phpversion()."\n";
     $sheader=$sheader."Mime-Version: 1.0\n";
     $sheader=$sheader."Content-Type: text/html; charset=utf-8\n";
