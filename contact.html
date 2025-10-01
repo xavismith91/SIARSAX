@@ -94,7 +94,7 @@
           <div class="col-lg-12">
             <p class="texto-justificado"><h1 class="text-center">Deja tus datos y nuestro equipo se pondrá en contacto</h2></p>
               <div class="container-fluid py-5">
-                  <form action="/forms/contact.php" method="POST" role="form">
+                  <form action="forms/contact.php" method="POST" role="form">
                   <div class="row justify-content-center">
                       <div class="col-lg-7">
                           <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -107,7 +107,7 @@
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="email" class="form-control border-0" name="correo"   placeholder="Email" required>
+                                          <input type="email" class="form-control border-0" name="correo"   placeholder="correo" required>
                                           <label for="gmail">Correo</label>
                                       </div>
                                   </div>
@@ -119,23 +119,25 @@
                                   </div>
                                   <div class="col-sm-6">
                                       <div class="form-floating">
-                                          <input type="text" class="form-control border-0" name="servicio"  placeholder="Tipo servicio" required>
+                                          <input type="text" class="form-control border-0" name="servicio"  placeholder="servicio" required>
                                           <label for="gname">Tipo de Servicio</label>
                                       </div>
                                   </div>                            
-                                  <select class="dropdown col-sm-6" name="marca" id="opcion" name="opcion">
+                                  <select class="dropdown col-sm-6" name="marca" id="marca" name="marca">
                                       <option value="Mirage">Mirage</option>
                                       <option value="Trane">Trane</option>
                                       <option value="Daikin">Daikin</option>
                                       <option value="York4">York</option>
                                       <option value="Honeywell">Honeywell</option>
+                                      <option value="Otro">Otro</option>
                                   </select>
-                                  <select class="dropdown col-sm-6" name="equipo" id="opcion" name="opcion">
+                                  <select class="dropdown col-sm-6" name="equipo" id="equipo" name="equipo">
                                     <option value="MiniSplit">MiniSplit</option>
                                     <option value="Chillers">Chillers</option>
                                     <option value="Daikin Divididos">Daikin Divididos</option>
                                     <option value="York Paquetes">York Paquetes</option>
                                     <option value="Evaporadores">Evaporadores</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                                   <br>
                                   <div class="col-12">
