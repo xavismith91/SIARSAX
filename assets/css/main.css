@@ -2042,6 +2042,33 @@ section {
   transition: 0.5s;
 }
 
+
+.blog .posts-list .post-img {
+  height: 220px; /* altura fija por defecto para que todas las tarjetas coincidan */
+  overflow: hidden; /* ya suele estar presente, pero lo reforzamos */
+}
+
+.blog .posts-list .post-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* mantiene la proporción recortando la imagen para llenar */
+  object-position: center center;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 991px) {
+  .blog .posts-list .post-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .blog .posts-list .post-img {
+    height: 150px;
+  }
+}
+
 .blog .posts-list .post-date {
   position: absolute;
   right: 0;
